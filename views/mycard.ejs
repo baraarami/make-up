@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="/"> Home</a>
+            <a href="/searches">All Product</a>
+            <a href="/mycard">My Card </a>
+        </div>
+    </header>
+
+    <div id="card">
+        <%data.forEach(item => { %>
+            <div id="subcard">
+                <h3><%=item.name%></h3>
+                <h2><%=item.price%></h2>
+                <img src="<%=item.mage_link%>" alt="">
+                <p><%=item.description%></p>
+
+
+                <form action="/detailes/<%=item.id%>" method="GET">
+                <input type="submit" value="View Detailes">
+                
+                </form>
+            </div>
+            
+        <%});%>
+
+    </div>
+</body>
+</html>

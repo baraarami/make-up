@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="/"> Home</a>
+            <a href="/searches">All Product</a>
+            <a href="/mycard">My Card </a>
+        </div>
+    </header>
+
+    <div id="card">
+        <%data.forEach(item => { %>
+            <div id="subcard">
+                <h3>name : <%=item.name%></h3>
+                <h2>price :<%=item.price%></h2>
+                <img src="<%item.image_link%>" alt="">
+                <p>description: <%item.description%></p>
+              
+            
+
+    
+
+    <form action="/addtocard" method="POST">
+    <input type="hidden" name="name" value=" <%=item.name%>">
+    <input type="hidden" name="price" value=" <%=item.price%>"> 
+    <input type="hidden" name="img" value=" <%item.image_link%>">
+    <input type="hidden" name="description" value=" <%item.description%>">
+    
+    <input type="submit" name="Addtocard" value="Add To Card">
+    
+    </form>
+</div>
+    <%});%>
+</div>
+</body>
+</html>
